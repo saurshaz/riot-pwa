@@ -1,0 +1,32 @@
+    
+const riot = require('riot')
+const StoreWatcher = require('../../../../lib/utils/storex.js')
+const RouterX = require('../../../../lib/utils/routerx.js')
+<app-auth>
+    <section>
+        <!-- Profile Content -->
+        <div class="animated fadeinup delay-1">
+          <div class="animated fadeinright delay-5">
+              <h5 class="card uppercase">Authentication</h5>
+              <!-- Main Content -->
+              <div id="myfeed" class="animated fadeinup">
+                  <p>Login</p>
+                   
+              </div>
+          </div>
+        </div> 
+      </div>
+    </section>
+    <script type="es6">
+        let self = this
+        // for validations
+        //  - add a validationform
+        //  - add a validate function in the handlers['<tag-name>'] section to set result
+        //                into state.<store>.<validationform>.validated property
+        self.stores = ['user'] // stores to watch
+        self.validationform = [] // validation form . this will have validated field
+
+        self.mixin(StoreWatcher)
+        self.mixin(RouterX)
+      </script>
+</app-auth>

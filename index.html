@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>My Riot PWA</title>
+    <link rel="icon" href="./src/assets/img/favicon.png" type="image/png" sizes="16x16">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="Simple Progressive Web App  By saurshaz Built With Riot Js">
+    <!-- MANIFEST -->
+    <link rel="manifest" href="./manifest.json">
+    <!-- ADD TO HOMESCREEN SAFARI ON IOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Simple PWA">
+    <link rel="apple-touch-icon" href="./src/assets/img/icon-152.png">
+    <!-- ADD TO HOMESCREEN WINDOWS -->
+    <meta name="msapplicatoin-TileImage" content="./src/assets/img/icon-144.png">
+    <meta name="msapplicatoin-TileColor" content="#3d5165">
+    <link rel="stylesheet" href="./src/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/vendor/ionicons/css/ionicons.min.css">
+    <meta content="IE=edge" http-equiv="x-ua-compatible">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- Icons -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
+</head>
+
+<body style="overflow: auto;">
+    <div class="m-scene" id="main">
+        <div id="app"></div>
+        <div id="blocking-loading" style="display:none;">
+            <img src="img/loader.gif" style="position:absolute;left:44%;top:44%;width:10%;background-color:blue;" />
+        </div>
+    </div>
+    <!-- <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script> -->
+    <script src="./bundle.js"></script>
+    <!-- <script src="build.js"></script> -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
+            // Registration Success
+            console.log('[serviceWorker]: registration successful with scope: ', registration.scope);
+        }).catch(function(err) {
+            // Registration failed :(
+            console.log('[serviceWorker] registration failed', err);
+        });
+    }
+    </script>
+</body>
+
+</html>

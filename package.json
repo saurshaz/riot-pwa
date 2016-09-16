@@ -1,0 +1,53 @@
+{
+  "name": "riot-one",
+  "version": "0.1.0",
+  "description": "Frictionless JavaScript in ES6/ES2015 and beyond.",
+  "scripts": {
+    "start": "node_modules/.bin/webpack-dev-server --host=0.0.0.0",
+    "test": "node_modules/.bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lastmjs/es-no-build.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lastmjs/es-no-build/issues"
+  },
+  "homepage": "https://github.com/lastmjs/es-no-build#readme",
+  "dependencies": {
+    "es-no-build": "0.0.3",
+    "jquery": "^2.1.0",
+    "moment": "^2.14.1",
+    "ramda": "^0.21.0",
+    "riot": "^2.4.1",
+    "riot-router": "^0.7.3"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.38",
+    "babel-loader": "^5.4.2",
+    "babel-preset-es2015": "^6.9.0",
+    "css-loader": "^0.23.1",
+    "cssnext": "^1.8.4",
+    "cssnext-loader": "^1.0.1",
+    "eslint": "^2.13.0",
+    "eslint-config-standard": "^5.3.1",
+    "eslint-plugin-promise": "^1.3.2",
+    "eslint-plugin-riot": "^0.1.5",
+    "eslint-plugin-standard": "^1.3.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "flow-status-webpack-plugin": "^0.1.5",
+    "glob": "^7.0.5",
+    "graceful-fs": "^4.1.5",
+    "hammerjs": "^2.0.8",
+    "http-server": "^0.9.0",
+    "json-loader": "^0.5.4",
+    "node-libs-browser": "^0.4.0",
+    "riot": "^2.5.0",
+    "riot-router": "^0.7.3",
+    "riotjs-loader": "^3.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.9.11",
+    "webpack-dev-server": "^1.15.1"
+  }
+}

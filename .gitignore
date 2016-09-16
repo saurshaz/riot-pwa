@@ -1,0 +1,9 @@
+.DS_Store
+/node_modules
+/pre_node_modules
+/dist
+/lib
+/coverage
+/halo-orig
+
+*.log
