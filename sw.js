@@ -2,7 +2,7 @@
 
 importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'simple-pwa-v2';
+var CACHE_NAME = 'riot-pwa-v2';
 
 // File want to cache
 var urlsToCache = [
@@ -23,7 +23,7 @@ var urlsToCache = [
   './src/vendor/ionicons/css/ionicons.min.css',
   './src/vendor/ionicons/fonts/ionicons.ttf',
   './src/vendor/ionicons/fonts/ionicons.woff',
-  './build/build.js',
+  './main.js',
   // './build.js',
 ];
 
@@ -103,7 +103,7 @@ self.onactivate = function (e) {
 
   console.log('[serviceWorker]: Actived');
 
-  var whiteList = ['simple-pwa-v2'];
+  var whiteList = ['riot-pwa-v2'];
 
   e.waitUntil(
     caches.keys().then(function (cacheNames) {

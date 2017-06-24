@@ -1,7 +1,6 @@
 const riot = require('riot')
 require('riot-router')
 
-
 function processorFilter(request, response, next) {
   try {
     let options = {

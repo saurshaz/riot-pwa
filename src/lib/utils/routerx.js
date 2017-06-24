@@ -6,7 +6,7 @@ module.exports = {
   nextView: 'xxx',
   init: function (stores) {
     let self = this
-    let appName = 'app' // @todo rm hardcoding
+    let appName = 'test' // @todo rm hardcoding
 
     // self._ shall already be existing, if not skip
     if (!self._) {
@@ -35,8 +35,8 @@ module.exports = {
           page: extraParams.page
         }
         
-        require('../../views/blocks/'+ appName + '/' + extraParams.fragment + '/' + appName + '-' + extraParams.fragment + '.html')
-        riot.mount(extraParams.target, appName + '-' + extraParams.fragment, options)
+        require(`../../views/${appName}/${extraParams.fragment}/${appName}-${extraParams.fragment}.html`)
+        riot.mount(extraParams.target, `${appName}-${extraParams.fragment}`, options)
         self.update()
       } else {
         document.location.href = targetUri
