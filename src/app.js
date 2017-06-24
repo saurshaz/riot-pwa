@@ -24,7 +24,10 @@ function processorFilter(request, response, next) {
   }
 }
 // Apply security filter to Riot-Router
-riot.router.use(processorFilter)
+// riot.router.use(processorFilter)
+
 riot.mount('*')
+require('./views/blocks/app/app-container.html')
+    riot.mount('#app', 'app-container', {})
 // Start routing
-riot.router.start()
+// riot.router.start()

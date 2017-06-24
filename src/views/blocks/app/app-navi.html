@@ -1,6 +1,7 @@
-
-const StoreWatcher = require('/src/lib/utils/storex.js')
-<riot-app-navi>
+const riot = require('riot')
+const StoreWatcher = require('../../../lib/utils/storex.js')
+const RouterX = require('../../../lib/utils/routerx.js')
+<app-navi>
   <section id='links'>
   <a onclick={_.fyler.navTo} class='__trigger' data-link='/?page=appbrowser&target=section#content-area&fragment=appbrowser'>R</a>
   <a onclick={_.fyler.navTo} class='__trigger' data-link='/?page=appbrowser&target=section#content-area&fragment=appbrowser'>C</a>
@@ -63,4 +64,4 @@ const StoreWatcher = require('/src/lib/utils/storex.js')
     })
   </script>
 
-</riot-app-navi>
+</app-navi>
