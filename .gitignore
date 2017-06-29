@@ -7,3 +7,4 @@
 /halo-orig
 /src/platforms
 *.log
+/src/plugins
