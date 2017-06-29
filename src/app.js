@@ -9,7 +9,7 @@ function processorFilter(request, response, next) {
     }
     let moduleName
     console.log(' *** app kickstarted *** ')
-    require('./views/blocks/app/app-container.html')
+    require('./www/views/blocks/app/app-container.html')
     riot.mount('#app', 'app-container', options)
    
     riot.routeState = {
@@ -27,7 +27,7 @@ function processorFilter(request, response, next) {
 // riot.router.use(processorFilter)
 
 riot.mount('*')
-require('./views/blocks/app/app-container.html')
+require('./www/views/blocks/app/app-container.html')
     riot.mount('#app', 'app-container', {})
 // Start routing
 // riot.router.start()

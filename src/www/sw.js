@@ -10,19 +10,19 @@ var urlsToCache = [
   './index.html',
   './manifest.json',
   './serviceworker-cache-polyfill.js',
-  './src/assets/img/blank-thumbnail.png',
-  './src/assets/img/favicon.png',
-  './src/assets/img/icon-48.png',
-  './src/assets/img/icon-96.png',
-  './src/assets/img/icon-128.png',
-  './src/assets/img/icon-144.png',
-  './src/assets/img/icon-152.png',
-  './src/assets/img/icon-196.png',
-  './src/assets/img/icon-384.png',
-  './src/vendor/bootstrap/css/bootstrap.min.css',
-  './src/vendor/ionicons/css/ionicons.min.css',
-  './src/vendor/ionicons/fonts/ionicons.ttf',
-  './src/vendor/ionicons/fonts/ionicons.woff',
+  './assets/img/blank-thumbnail.png',
+  './assets/img/favicon.png',
+  './assets/img/icon-48.png',
+  './assets/img/icon-96.png',
+  './assets/img/icon-128.png',
+  './assets/img/icon-144.png',
+  './assets/img/icon-152.png',
+  './assets/img/icon-196.png',
+  './assets/img/icon-384.png',
+  './vendor/bootstrap/css/bootstrap.min.css',
+  './vendor/ionicons/css/ionicons.min.css',
+  './vendor/ionicons/fonts/ionicons.ttf',
+  './vendor/ionicons/fonts/ionicons.woff',
   './main.js',
   // './build.js',
 ];
@@ -63,7 +63,7 @@ self.onfetch = function (e) {
     );
   }
 
-  else if (e.request.url.indexOf('src/assets/img-content') > -1) {
+  else if (e.request.url.indexOf('./assets/img-content') > -1) {
     e.respondWith(
       caches.match(e.request).then(function (res) {
 

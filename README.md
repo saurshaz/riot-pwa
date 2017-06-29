@@ -10,7 +10,7 @@
 ### Intro		####
 ####################
 
-- Demo-ed at http://prokriya.us/riot-pwa/
+- Demo-ed at http://prokriya.us/riot-pwa/src/www/index.html
 - Do a `npm i`
 - Do a `npm start`
 - Go to (`http://localhost:8080/`)[http://localhost:8080/]

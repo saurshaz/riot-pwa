@@ -5,5 +5,5 @@
 /lib
 /coverage
 /halo-orig
-
+/src/platforms
 *.log
