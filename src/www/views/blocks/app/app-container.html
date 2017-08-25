@@ -3,7 +3,6 @@ require('../../../views/blocks/app/app-main.html')
 require('../../../views/blocks/app/app-navi.html')
 require('../../../views/blocks/app/app-help.html')
 
-const StoreWatcher = require('../../../lib/utils/storex.js')
 const RouterX = require('../../../lib/utils/routerx.js')
 
 <app-container>
@@ -16,15 +15,6 @@ const RouterX = require('../../../lib/utils/routerx.js')
   </style>
 
   <script>
-	var self = this
-  // for validations
-  //  - add a validationform
-  //  - add a validate function in the handlers['<tag-name>'] section to set result
-  //                into state.<store>.<validationform>.validated property
-  self.stores = ['user'] // stores to watch
-  self.validationform = [] // validation form . this will have validated field
-
-  self.mixin(StoreWatcher)
-  self.mixin(RouterX)
+  	var self = this
   </script>
 </app-container>
