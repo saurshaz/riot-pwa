@@ -44,6 +44,7 @@ module.exports = {
       loaders: ['json-loader']
     }],
     plugins: [
+      new webpack.optimize.AggressiveMergingPlugin(),
       new webpack.IgnorePlugin(/\.json$/),
       new webpack.optimize.UglifyJsPlugin({
         test: /\.js|\.html$/,

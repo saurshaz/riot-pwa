@@ -37,8 +37,16 @@
           window.addEventListener('load', () => {
             navigator.serviceWorker.register('sw.js')
                 .then((registration) => {
-                  // Registration was successful
-                  console.log('ServiceWorker registration successful with scope: ', registration.scope)
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope)
+                    var newWorker = registration.installing           
+                    // statechange fires every time the ServiceWorker.state changes
+                    newWorker.onstatechange = function() {
+                      // show the message on activation
+                      if (newWorker.state == 'activated' && !navigator.serviceWorker.controller) {
+                        document.querySelector(".offline-ready").classList.add("active");
+                      }
+                    };
                 }, (err) => {
                       // registration failed :(
                   console.log('ServiceWorker registration failed: ', err)
@@ -52,6 +60,52 @@
         }
 
 </script>
+
+  <script type="text/javascript">
+        var notify
+        Notification.requestPermission().then((p) => {
+          if (p === 'denied') {
+            alert('You have Denied Notifications.')
+          } else if (p === 'granted') {
+            alert('You have granted Notifications.')
+            notify = new Notification('Joker Says', {
+              body: 'This is auto generated message',
+              icon: 'http://www.gorillatshirts.co.uk//image/cache/data/template01/black/2581-192x192.jpg',
+              tag: 'Notification'
+            })
+          }
+        })
+
+        if (Notification.permission === 'default') {
+          alert('please allow Notifications')
+        } else {
+          notify = new Notification('Joker Says', {
+            body: 'HA HA HA Ha',
+            icon: 'http://www.gorillatshirts.co.uk//image/cache/data/template01/black/2581-192x192.jpg',
+            tag: 'Notification'
+          })
+          setTimeout(notify.close.bind(notify), 4000)
+        }
+    </script>
+    <script type="/src/www/addtohomescreen.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>
+    <script src="/src/www/config.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        (
+            function (i, s, o, g, r, a, m) {
+              i['GoogleAnalyticsObject'] = r
+              i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+              }, i[r].l = 1 * new Date()
+              a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0]
+              a.async = 1
+              a.src = g
+              m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga')
+        ga ('create', 'UA-CCCC-2', 'auto')
+    </script>
 </body>
 
 </html>
