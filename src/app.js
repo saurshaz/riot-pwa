@@ -1,6 +1,6 @@
 const riot = require('riot')
 require('riot-router')
-
+require('./www/sw.js')
 function processorFilter(request, response, next) {
   try {
     let options = {
