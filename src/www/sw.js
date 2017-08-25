@@ -18,11 +18,7 @@ var urlsToCache = [
   '/src/www/assets/img/icon-144.png',
   '/src/www/assets/img/icon-152.png',
   '/src/www/assets/img/icon-196.png',
-  '/src/www/assets/img/icon-384.png',
-  '/src/www/vendor/bootstrap/css/bootstrap.min.css',
-  '/src/www/vendor/ionicons/css/ionicons.min.css',
-  '/src/www/vendor/ionicons/fonts/ionicons.ttf',
-  '/src/www/vendor/ionicons/fonts/ionicons.woff'
+  '/src/www/assets/img/icon-384.png'
   // '/main.js'
 ]
 // Set this to true for production

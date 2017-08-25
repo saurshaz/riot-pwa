@@ -1,5 +1,4 @@
 const riot = require('riot')
-require('riot-router')
 require('./www/sw.js')
 
 const processorFilter = (request, response, next) => {
