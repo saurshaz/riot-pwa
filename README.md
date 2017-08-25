@@ -11,8 +11,8 @@
 ####################
 
 - Demo-ed at http://prokriya.us/riot-pwa/src/www/index.html
-- Do a `npm i`
-- Do a `npm start`
+- Do a `npm i` or `yarn`
+- Do a `npm start` or `yarn start`
 - Go to (`http://localhost:8080/`)[http://localhost:8080/]
 
 ####################
