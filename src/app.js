@@ -1,7 +1,7 @@
 const riot = require('riot')
 require('riot-router')
 require('./www/sw.js')
-function processorFilter(request, response, next) {
+const processorFilter = (request, response, next) => {
   try {
     let options = {
       domain: 'user',
@@ -10,8 +10,7 @@ function processorFilter(request, response, next) {
     let moduleName
     console.log(' *** app kickstarted *** ')
     require('./www/views/blocks/app/app-container.html')
-    riot.mount('#app', 'app-container', options)
-   
+    riot.mount('#app', 'app-container', options) 
     riot.routeState = {
       view: ''
     }

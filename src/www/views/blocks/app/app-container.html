@@ -7,26 +7,24 @@ const StoreWatcher = require('../../../lib/utils/storex.js')
 const RouterX = require('../../../lib/utils/routerx.js')
 
 <app-container>
-
-  
-    <app-main></app-main>
-    <app-navi></app-navi>
-    <app-help></app-help>
+  <app-main></app-main>
+  <app-navi></app-navi>
+  <app-help></app-help>
 
   <style>
     body { margin: 0 }
   </style>
 
   <script>
-  	var self = this
-    // for validations
-    //  - add a validationform
-    //  - add a validate function in the handlers['<tag-name>'] section to set result
-    //                into state.<store>.<validationform>.validated property
-    self.stores = ['user'] // stores to watch
-    self.validationform = [] // validation form . this will have validated field
+	var self = this
+  // for validations
+  //  - add a validationform
+  //  - add a validate function in the handlers['<tag-name>'] section to set result
+  //                into state.<store>.<validationform>.validated property
+  self.stores = ['user'] // stores to watch
+  self.validationform = [] // validation form . this will have validated field
 
-    self.mixin(StoreWatcher)
-    self.mixin(RouterX)
+  self.mixin(StoreWatcher)
+  self.mixin(RouterX)
   </script>
 </app-container>

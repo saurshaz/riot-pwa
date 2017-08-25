@@ -1,6 +1,7 @@
 const riot = require('riot')
 const StoreWatcher = require('../../../lib/utils/storex.js')
 const RouterX = require('../../../lib/utils/routerx.js')
+
 <app-navi>
   <section id='links'>
   <a onclick={_.fyler.navTo} class='__trigger' data-link='/?page=appbrowser&target=section#content-area&fragment=appbrowser'>R</a>
@@ -55,13 +56,13 @@ const RouterX = require('../../../lib/utils/routerx.js')
     // self.mixin(StoreWatcher)
     let mixin = self.mixin(StoreWatcher)
 
-    self.on('mount', ()=>{
-        self.root.querySelector('section#links').onclick = function (e) {
-            if(e.target.nodeName === "A" && e.target.classList.contains('__trigger')){
-                self._.navTo(e.target.getAttribute('data-link'),'test')
-            }
+    self.on('mount', () => {
+      self.root.querySelector('section#links').onclick = (e) => {
+        if (e.target.nodeName === 'A' && e.target.classList.contains('__trigger')) {
+          self._.navTo(e.target.getAttribute('data-link'), 'test')
         }
+      }
     })
-  </script>
+</script>
 
 </app-navi>
