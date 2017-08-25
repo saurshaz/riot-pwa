@@ -27,6 +27,6 @@ const processorFilter = (request, response, next) => {
 
 riot.mount('*')
 require('./www/views/blocks/app/app-container.html')
-    riot.mount('#app', 'app-container', {})
+riot.mount('#app', 'app-container', {})
 // Start routing
 // riot.router.start()
