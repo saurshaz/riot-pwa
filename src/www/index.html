@@ -39,14 +39,28 @@
                 .then((registration) => {
                     // Registration was successful
                     console.log('ServiceWorker registration successful with scope: ', registration.scope)
-                    var newWorker = registration.installing           
+                    
                     // statechange fires every time the ServiceWorker.state changes
-                    newWorker.onstatechange = function() {
+                    if (registration.installing) {
+                      serviceWorker = registration.installing
+                      console.log('#kind' + 'installing')
+                    } else if (registration.waiting) {
+                      serviceWorker = registration.waiting
+                      console.log('#kind' + 'waiting')
+                    } else if (registration.active) {
+                      serviceWorker = registration.active
+                      console.log('#kind' + 'active')
                       // show the message on activation
-                      if (newWorker.state == 'activated' && !navigator.serviceWorker.controller) {
-                        document.querySelector(".offline-ready").classList.add("active");
+                      if (serviceWorker.state === 'activated' && !navigator.serviceWorker.controller) {
+                        registration.active.onstatechange = () => {
+                            if (serviceWorker.state == 'activated' && !navigator.serviceWorker.controller) {
+                                    document.querySelector(".offline-ready").classList.add("active")
+                            } else {
+                                document.querySelector(".offline-ready").classList.add("inactive")
+                            }
+                        }
                       }
-                    };
+                    }
                 }, (err) => {
                       // registration failed :(
                   console.log('ServiceWorker registration failed: ', err)
@@ -89,7 +103,7 @@
     </script>
     <script type="/src/www/addtohomescreen.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>
-    <script src="/src/www/config.js"></script>
+    <!-- <script src="/src/www/config.js"></script> -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
         (

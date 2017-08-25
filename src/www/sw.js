@@ -18,8 +18,9 @@ var urlsToCache = [
   '/src/www/assets/img/icon-144.png',
   '/src/www/assets/img/icon-152.png',
   '/src/www/assets/img/icon-196.png',
-  '/src/www/assets/img/icon-384.png'
-  // '/main.js'
+  '/src/www/assets/img/icon-384.png',
+  '/main.js',
+  '/src/www/sw.js'
 ]
 // Set this to true for production
 var doCache = true
