@@ -12,6 +12,7 @@ handlers['counter'] = {}
 handlers['counter'].increment = function (data, store, cb, event) {
   store.setState(data.domain || data.page, 'cnt', (store.getState(data.domain || data.page, 'cnt') + 1))
 }
+
 handlers['counter'].decrement = function (data, store, cb, event) {
   store.setState(data.domain || data.page, 'cnt', (store.getState(data.domain || data.page, 'cnt') - 1))
 }
