@@ -4,6 +4,7 @@
   "description": "Frictionless PWA with riot in ES6/ES2015 and beyond.",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --host=0.0.0.0",
+    "build": "node_modules/.bin/webpack --config=webpack.config.prod.js",
     "test": "node_modules/.bin/mocha test"
   },
   "repository": {
