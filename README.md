@@ -19,10 +19,10 @@
 starter is based on https://github.com/BosNaufal/vue-simple-pwa
 
 
+- [X] serviceworker to cache data, so that cached data is used on subsequent visits
 - [X] cordova wrap the app (same codebase) and make the app run
 - [ ] Push notifications usage
 - [ ] change of colour as network is lost
-- [ ] serviceworker to cache data, so that cached data is used on subsequent visits
 - [ ] AppShell sample usage
 - [ ] cache API data as part of HTML itself
 - [ ] SSR
