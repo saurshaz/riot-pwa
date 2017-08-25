@@ -5,6 +5,9 @@
 /lib
 /coverage
 /halo-orig
-/src/platforms
 *.log
+/src/res
 /src/plugins
+/src/platforms
+/src/node_modules
+/src/hooks
