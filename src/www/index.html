@@ -143,8 +143,8 @@
             </div> -->
         </div>
     </div>
-    <!-- <script src="/dist/main.js"></script> -->
-    <script src="http://localhost:8080/main.js"></script>
+    <script src="/dist/main.js"></script>
+    <!-- <script src="http://localhost:8080/main.js"></script> -->
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
@@ -163,15 +163,19 @@
                     } else if (registration.active) {
                       serviceWorker = registration.active
                       console.log('#kind' + 'active')
-                      // show the message on activation
                       if (serviceWorker.state === 'activated' && !navigator.serviceWorker.controller) {
-                        registration.active.onstatechange = () => {
-                            if (serviceWorker.state == 'activated' && !navigator.serviceWorker.controller) {
-                                    document.querySelector(".offline-ready").classList.add("active")
-                            } else {
-                                document.querySelector(".offline-ready").classList.add("inactive")
-                            }
-                        }
+                          // show the message on activation
+                          function updateOnlineStatus(event) {
+                            var condition = navigator.onLine ? "online" : "offline";
+
+                            var log = document.querySelector('app-main #content-area')
+                            console.log(condition)
+                            // document.querySelector(".offline-ready").innerText(condition)
+                            log.insertAdjacentHTML("beforeend", "Event: " + event.type + "; Status: " + condition);
+                          }
+
+                          window.addEventListener('online',  updateOnlineStatus);
+                          window.addEventListener('offline', updateOnlineStatus);
                       }
                     }
                 }, (err) => {

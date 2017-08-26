@@ -7,20 +7,21 @@ var CACHE_NAME = 'riot-pwa-v2'
 // File want to cache
 var urlsToCache = [
   '/',
-  '/src/www/index.html',
-  '/src/www/manifest.json',
-  '/src/www/serviceworker-cache-polyfill.js',
-  '/src/www/assets/img/blank-thumbnail.png',
-  '/src/www/assets/img/favicon.png',
-  '/src/www/assets/img/icon-48.png',
-  '/src/www/assets/img/icon-96.png',
-  '/src/www/assets/img/icon-128.png',
-  '/src/www/assets/img/icon-144.png',
-  '/src/www/assets/img/icon-152.png',
-  '/src/www/assets/img/icon-196.png',
-  '/src/www/assets/img/icon-384.png',
+  '/index.html',
+  '/manifest.json',
+  '/serviceworker-cache-polyfill.js',
+  '/assets/img/blank-thumbnail.png',
+  '/assets/img/favicon.png',
+  '/assets/img/icon-48.png',
+  '/assets/img/icon-96.png',
+  '/assets/img/icon-128.png',
+  '/assets/img/icon-144.png',
+  '/assets/img/icon-152.png',
+  '/assets/img/icon-196.png',
+  '/assets/img/icon-384.png',
   '/main.js',
-  '/src/www/sw.js'
+  '/dist/main.js',
+  '/sw.js'
 ]
 // Set this to true for production
 var doCache = true
