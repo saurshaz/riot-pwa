@@ -39,6 +39,7 @@ starter is based on https://github.com/BosNaufal/vue-simple-pwa
 - [X] AppShell sample usage
 - [X] Firebase deployment
 - [X] change of colour as network is lost
+- [ ] Uglify in the prod build (`webpack`)
 - [ ] Fetch data from a 3rd party API in one of the components
 - [ ] Demonstrate inter-component communication in simplest fashion
 - [ ] cache API data as part of HTML itself
