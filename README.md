@@ -10,10 +10,20 @@
 ### Intro		####
 ####################
 
-- Demo-ed at http://prokriya.us/riot-pwa/src/www/index.html
+
+### Dev Environment
+- Check that `dist` directory is removed from `src/www`
 - Do a `npm i` or `yarn`
 - Do a `npm start` or `yarn start`
-- Go to (`http://localhost:8080/src/www/index.html/`)[http://localhost:8080/src/www/index.html]
+- Go to (`http://localhost:8080/`)[http://localhost:8080/]
+
+### Stage Environment(firebase)
+- Run `yarn build`
+- Run `cd src/www`
+- Run `firebase serve` to look at firebase version on local 
+- Run `firebase deploy` (install `firebase-tools` from `npmjs.com`)
+
+### How it performs
 - ![Demo](/demo.gif)
 - ![Staging URL](https://riot-pwa.firebaseapp.com/)
 - ![Lighthouse score](https://i.gyazo.com/d80141afdfffe83d5b415595153bee5f.png)
