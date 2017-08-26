@@ -31,7 +31,7 @@
 ####################
 starter is based on https://github.com/BosNaufal/vue-simple-pwa
 
-
+### TODOs
 - [X] serviceworker to cache data, so that cached data is used on subsequent visits
 - [X] cordova wrap the app (same codebase) and make the app run
 - [X] Counter example to show state-management
@@ -43,3 +43,5 @@ starter is based on https://github.com/BosNaufal/vue-simple-pwa
 - [ ] change of colour as network is lost
 - [ ] cache API data as part of HTML itself
 - [ ] Test PWA features working in Cordova App
+- [ ] Cleanup the multiple `package.json` files
+- [ ] Upgrade to latest `babel`, `webpack` and `riotjs` versions
