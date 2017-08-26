@@ -29,35 +29,118 @@
     <div class="m-scene" id="main">
         <div id="app" data-is="app-container" riot-tag="app-container">
             <h4 class="offline-ready">Live</h4> 
-            <app-main>
+            <app-main style="display: block;
+                        font-family: sans-serif;
+                        margin-right: 0;
+                        margin-bottom: 130px;
+                        margin-left: 50px;
+                        padding: 1em;
+                        text-align: center;
+                        color: #666;">
                 <section id="content-area"> 
                     <article> <h1>Now it's loading...</h1> 
-                    <ul>
-                        <li>
-                            <a href="#/first/apple">Apple</a> 
+                    <ul style="    padding: 10px;
+                            list-style: none">
+                        <li style="    display: inline-block;
+                            margin: 5px;">
+                            <a style="    background: #eee;
+                                color: #000;     display: block;
+                                    background: #f7f7f7;
+                                    text-decoration: none;
+                                    width: 150px;
+                                    height: 150px;
+                                    line-height: 150px;
+                                    color: inherit;" href="#/first/apple">Apple</a> 
                         </li>
-                        <li>
-                            <a href="#/first/orange">Orange</a
+                        <li style="    display: inline-block;
+                            margin: 5px;">
+                            <a style="    background: #eee;
+                                color: #000;     display: block;
+                                    background: #f7f7f7;
+                                    text-decoration: none;
+                                    width: 150px;
+                                    height: 150px;
+                                    line-height: 150px;
+                                    color: inherit;" href="#/first/orange">Orange</a
                         </li> 
                     </ul> 
                     <app-counter/>
             </app-main>
-            <app-navi>
+            <app-navi style="    position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                box-sizing: border-box;
+                font-family: sans-serif;
+                text-align: center;
+                color: #666;
+                background: #333;
+                width: 50px;
+                transition: width .2s;
+            }">
                 <section id="links">
-                    <a class="__trigger" x-to="test" x-in="section#content-area">R</a>
-                    <a class="__trigger" x-to="test" x-in="section#help">C</a>
-                    <a class="__trigger" x-to="counter" x-in="section#help">+</a>
+                    <a style="    display: block;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    padding: 0 .8em;
+                    color: white;
+                    text-decoration: none;
+                    background: #444;" class="__trigger" x-to="test" x-in="section#content-area">R</a>
+                                    <a style="    display: block;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    padding: 0 .8em;
+                    color: white;
+                    text-decoration: none;
+                    background: #444;" class="__trigger" x-to="test" x-in="section#help">C</a>
+                                    <a style="    display: block;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    padding: 0 .8em;
+                    color: white;
+                    text-decoration: none;
+                    background: #444;" class="__trigger" x-to="counter" x-in="section#help">+</a>
                 </section>
             </app-navi>
-            <app-help>
+            <app-help style="position: fixed;
+                top: auto;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 130px;
+                box-sizing: border-box;
+                font-family: sans-serif;
+                margin: 0;
+                padding: 1em;
+                text-align: center;
+                color: #666;
+                background: #f7f7f7;
+            ">
                 <section id="help"> 
-                    <h2>Help</h2> 
-                    <p>This is the help for the first page.</p> 
+                    <h2 style="display: block;
+                        font-size: 1.5em;
+                        -webkit-margin-before: 0.83em;
+                        -webkit-margin-after: 0.83em;
+                        -webkit-margin-start: 0px;
+                        -webkit-margin-end: 0px;
+                        font-weight: bold;">Help</h2> 
+                    <p style="    display: block;
+                        -webkit-margin-before: 1em;
+                        -webkit-margin-after: 1em;
+                        -webkit-margin-start: 0px;
+                        -webkit-margin-end: 0px;">This is the help for the first page.</p> 
                 </section>
             </app-help>
-        </div>
-        <div id="blocking-loading" style="display:none;">
-            <img src="http://prokriya.us/riot-pwa/src/www/assets/img/loader.gif" style="position:absolute;left:44%;top:44%;width:10%;background-color:blue;">
+            <!-- <div id="blocking-loading" style="display:block;">
+                <img src="/src/www/assets/img/loader.gif" style="position:absolute;left:44%;top:44%;width:10%;background-color:blue;">
+            </div> -->
         </div>
     </div>
     <script src="/main.js"></script>
