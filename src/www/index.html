@@ -143,7 +143,8 @@
             </div> -->
         </div>
     </div>
-    <script src="/main.js"></script>
+    <!-- <script src="/dist/main.js"></script> -->
+    <script src="http://localhost:8080/main.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
@@ -196,7 +197,7 @@
             alert('You have granted Notifications.')
             notify = new Notification('Joker Says', {
               body: 'This is auto generated message',
-              icon: 'http://www.gorillatshirts.co.uk//image/cache/data/template01/black/2581-192x192.jpg',
+              icon: './assets/img/2581-192x192.jpg',
               tag: 'Notification'
             })
           }
@@ -207,13 +208,13 @@
         } else {
           notify = new Notification('Joker Says', {
             body: 'HA HA HA Ha',
-            icon: 'http://www.gorillatshirts.co.uk//image/cache/data/template01/black/2581-192x192.jpg',
+            icon: './assets/img/2581-192x192.jpg',
             tag: 'Notification'
           })
           setTimeout(notify.close.bind(notify), 4000)
         }
     </script>
-    <script type="/src/www/addtohomescreen.js"></script>
+    <!-- <script type="/src/www/addtohomescreen.js"></script> -->
     <script src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>
     <!-- <script src="/src/www/config.js"></script> -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
