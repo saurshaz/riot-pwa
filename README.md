@@ -38,9 +38,9 @@ starter is based on https://github.com/BosNaufal/vue-simple-pwa
 - [X] Push notifications usage
 - [X] AppShell sample usage
 - [X] Firebase deployment
+- [X] change of colour as network is lost
 - [ ] Fetch data from a 3rd party API in one of the components
 - [ ] Demonstrate inter-component communication in simplest fashion
-- [ ] change of colour as network is lost
 - [ ] cache API data as part of HTML itself
 - [ ] Test PWA features working in Cordova App
 - [ ] Cleanup the multiple `package.json` files

@@ -80,32 +80,29 @@
             }">
                 <section id="links">
                     <a style="    display: block;
-                    box-sizing: border-box;
-                    width: 100%;
-                    height: 50px;
-                    line-height: 50px;
-                    padding: 0 .8em;
-                    color: white;
-                    text-decoration: none;
-                    background: #444;" class="__trigger" x-to="test" x-in="section#content-area">R</a>
-                                    <a style="    display: block;
-                    box-sizing: border-box;
-                    width: 100%;
-                    height: 50px;
-                    line-height: 50px;
-                    padding: 0 .8em;
-                    color: white;
-                    text-decoration: none;
-                    background: #444;" class="__trigger" x-to="test" x-in="section#help">C</a>
-                                    <a style="    display: block;
-                    box-sizing: border-box;
-                    width: 100%;
-                    height: 50px;
-                    line-height: 50px;
-                    padding: 0 .8em;
-                    color: white;
-                    text-decoration: none;
-                    background: #444;" class="__trigger" x-to="counter" x-in="section#help">+</a>
+                        box-sizing: border-box;
+                        width: 100%;
+                        height: 50px;
+                        line-height: 50px;
+                        padding: 0 .8em;
+                        color: white;
+                        text-decoration: none;" class="__trigger" x-to="test" x-in="section#content-area">R</a>
+                    <a style="    display: block;
+                        box-sizing: border-box;
+                        width: 100%;
+                        height: 50px;
+                        line-height: 50px;
+                        padding: 0 .8em;
+                        color: white;
+                        text-decoration: none;" class="__trigger" x-to="test" x-in="section#help">C</a>
+                    <a style="    display: block;
+                        box-sizing: border-box;
+                        width: 100%;
+                        height: 50px;
+                        line-height: 50px;
+                        padding: 0 .8em;
+                        color: white;
+                        text-decoration: none;" class="__trigger" x-to="counter" x-in="section#help">+</a>
                 </section>
             </app-navi>
             <app-help style="position: fixed;
@@ -138,9 +135,6 @@
                         -webkit-margin-end: 0px;">This is the help for the first page.</p> 
                 </section>
             </app-help>
-            <!-- <div id="blocking-loading" style="display:block;">
-                <img src="/src/www/assets/img/loader.gif" style="position:absolute;left:44%;top:44%;width:10%;background-color:blue;">
-            </div> -->
         </div>
     </div>
     <!-- <script src="/dist/main.js"></script> -->
@@ -150,34 +144,33 @@
           window.addEventListener('load', () => {
             navigator.serviceWorker.register('sw.js')
                 .then((registration) => {
-                    // Registration was successful
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope)
-                    
-                    // statechange fires every time the ServiceWorker.state changes
-                    if (registration.installing) {
-                      serviceWorker = registration.installing
-                      console.log('#kind' + 'installing')
-                    } else if (registration.waiting) {
-                      serviceWorker = registration.waiting
-                      console.log('#kind' + 'waiting')
-                    } else if (registration.active) {
-                      serviceWorker = registration.active
-                      console.log('#kind' + 'active')
-                      if (serviceWorker.state === 'activated' && !navigator.serviceWorker.controller) {
+                  // Registration was successful
+                  console.log('ServiceWorker registration successful with scope: ', registration.scope)
+                  // statechange fires every time the ServiceWorker.state changes
+                  if (registration.installing) {
+                    window.serviceWorker = registration.installing
+                    console.log('#kind' + 'installing')
+                  } else if (registration.waiting) {
+                    window.serviceWorker = registration.waiting
+                    console.log('#kind' + 'waiting')
+                  } else if (registration.active) {
+                    window.serviceWorker = registration.active
+                    console.log('#kind' + 'active')
+                    if (window.serviceWorker.state === 'activated' && !navigator.serviceWorker.controller) {
                           // show the message on activation
-                          function updateOnlineStatus(event) {
-                            var condition = navigator.onLine ? "online" : "offline";
-
-                            var log = document.querySelector('app-main #content-area')
-                            console.log(condition)
-                            // document.querySelector(".offline-ready").innerText(condition)
-                            log.insertAdjacentHTML("beforeend", "Event: " + event.type + "; Status: " + condition);
-                          }
-
-                          window.addEventListener('online',  updateOnlineStatus);
-                          window.addEventListener('offline', updateOnlineStatus);
+                      const updateOnlineStatus = (event) => {
+                        const navi = document.querySelector('app-navi')
+                        if (navigator.onLine) {
+                          navi.style.background = '#333'
+                        } else {
+                          navi.style.background = '#9e9898'
+                        }
                       }
+
+                      window.addEventListener('online', updateOnlineStatus)
+                      window.addEventListener('offline', updateOnlineStatus)
                     }
+                  }
                 }, (err) => {
                       // registration failed :(
                   console.log('ServiceWorker registration failed: ', err)
