@@ -16,6 +16,7 @@
     <meta name="apple-mobile-web-app-title" content="Simple PWA">
     <link rel="apple-touch-icon" href="./assets/img/icon-152.png">
     <!-- ADD TO HOMESCREEN WINDOWS -->
+    <meta name="theme-color" content="#3d5165">
     <meta name="msapplicatoin-TileImage" content="./assets/img/icon-144.png">
     <meta name="msapplicatoin-TileColor" content="#3d5165">
     <meta content="IE=edge" http-equiv="x-ua-compatible">
@@ -26,9 +27,37 @@
 
 <body style="overflow: auto;">
     <div class="m-scene" id="main">
-        <div id="app"></div>
+        <div id="app" data-is="app-container" riot-tag="app-container">
+            <h4 class="offline-ready">Live</h4> 
+            <app-main>
+                <section id="content-area"> 
+                    <article> <h1>Now it's loading...</h1> 
+                    <ul>
+                        <li>
+                            <a href="#/first/apple">Apple</a> 
+                        </li>
+                        <li>
+                            <a href="#/first/orange">Orange</a
+                        </li> 
+                    </ul> 
+                    <app-counter/>
+            </app-main>
+            <app-navi>
+                <section id="links">
+                    <a class="__trigger" x-to="test" x-in="section#content-area">R</a>
+                    <a class="__trigger" x-to="test" x-in="section#help">C</a>
+                    <a class="__trigger" x-to="counter" x-in="section#help">+</a>
+                </section>
+            </app-navi>
+            <app-help>
+                <section id="help"> 
+                    <h2>Help</h2> 
+                    <p>This is the help for the first page.</p> 
+                </section>
+            </app-help>
+        </div>
         <div id="blocking-loading" style="display:none;">
-            <img src="http://prokriya.us/riot-pwa/src/www/assets/img/loader.gif" style="position:absolute;left:44%;top:44%;width:10%;background-color:blue;" />
+            <img src="http://prokriya.us/riot-pwa/src/www/assets/img/loader.gif" style="position:absolute;left:44%;top:44%;width:10%;background-color:blue;">
         </div>
     </div>
     <script src="/main.js"></script>
