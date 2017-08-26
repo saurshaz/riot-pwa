@@ -1,4 +1,5 @@
 const riot = require('riot')
+require('./app-counter.html')
 const RouterX = require('../../../lib/utils/routerx.js')
 
 <app-main>
@@ -13,6 +14,7 @@ const RouterX = require('../../../lib/utils/routerx.js')
         <a href="#/first/{ id }">{ title }</a>
       </li>
     </ul>
+    <app-counter></app-counter>
   </article>
   </section>
 
@@ -20,10 +22,12 @@ const RouterX = require('../../../lib/utils/routerx.js')
     var self = this
     self.title = 'Now it\'s loading...'
     self.body = ''
+    self.isFirst = true
     self.data = [
       { id: 'apple', title: 'Apple', body: "The world biggest fruit company." },
       { id: 'orange', title: 'Orange', body: "I don't have the word for it..." }
     ]
+    self.update()
   </script>
 
   <style scoped>

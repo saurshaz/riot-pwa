@@ -1,4 +1,27 @@
 const riot = require('riot')
 <app-counter>
-	<h1> Hello Mr. Counter </h1>
+	<section>
+		<h1> Hello Mr. Counter {cnt} </h1>
+		<button onclick={increment}> Add </button>
+		<button onclick={decrement}> Subtract </button>
+	</section>
+
+
+	<script type="text/javascript">
+		const self = this
+		self.on('mount', () => {
+			self.cnt = 0
+			self.update()
+		})
+
+		self.increment = () => {
+			self.cnt+=1
+			self.update()
+		}
+
+		self.decrement = () => {
+			self.cnt-=1
+			self.update()
+		}
+	</script>
 </app-counter>
